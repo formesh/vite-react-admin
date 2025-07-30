@@ -22,7 +22,7 @@ export const routes: AppRouteObject[] = [
                 lazy: async () => ({
                     Component: (await import('@/pages/test')).default
                 }),
-                meta: { title: "测试", icon: TestTube, requiresAuth: true },
+                meta: { title: "测试", icon: TestTube },
             },
             {
                 path: '/about',
