@@ -48,7 +48,26 @@ const useUserStore = create<UserStore>(
             }),
             {
                 name: 'GGBONDUSER',
-                storage: createJSONStorage(() => localStorage)
+                storage: createJSONStorage(() => localStorage),
+                version: 1,
+                migrate: (persistedState: any, version: number) => {
+                    // 如果版本不匹配或状态结构有问题，返回默认状态
+                    if (version !== 1 || !persistedState || typeof persistedState !== 'object') {
+                        return { user: defaultUser };
+                    }
+                    // 确保用户对象包含所有必需的字段
+                    const user = persistedState.user || {};
+                    return {
+                        user: {
+                            id: user.id || '',
+                            name: user.name || '',
+                            email: user.email || '',
+                            avatar: user.avatar || '',
+                            role: user.role || 'guest',
+                            token: user.token || '',
+                        }
+                    };
+                }
             }
         )
     )

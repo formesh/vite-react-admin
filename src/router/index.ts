@@ -55,6 +55,7 @@ export const routes: AppRouteObject[] = [
     },
     {
         path: '/login',
+        HydrateFallback: LoadingFallback,
         lazy: async () => ({
             Component: (await import('@/pages/login')).default
         }),
@@ -62,6 +63,7 @@ export const routes: AppRouteObject[] = [
     },
     {
         path: '/unauthorized',
+        HydrateFallback: LoadingFallback,
         lazy: async () => ({
             Component: (await import('@/pages/unauthorized')).default
         }),
@@ -70,6 +72,7 @@ export const routes: AppRouteObject[] = [
     {
 
         path: '*',
+        HydrateFallback: LoadingFallback,
         lazy: async () => ({
             Component: (await import('@/pages/404')).default
         }),
