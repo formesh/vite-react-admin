@@ -18,6 +18,7 @@ import { useAuth } from '@/hooks/useAuth'
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/components/ui/collapsible';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { ChevronUp, User2, ChevronRight } from 'lucide-react';
+import AppIcon from '@/components/AppIcon';
 
 function getMenuRoutes(routes: AppRouteObject[], path?: string) {
 
@@ -86,8 +87,8 @@ const SliderMenu = ({ ...props }) => {
 							className="data-[slot=sidebar-menu-button]:!p-1.5"
 						>
 							<a href="#">
-								<User2 className="!size-5" />
-								<span className="text-base font-semibold">Acme Inc.</span>
+								<AppIcon size={20} className="!size-5" />
+								<span className="text-base font-semibold">Nexus Admin Pro</span>
 							</a>
 						</SidebarMenuButton>
 					</SidebarMenuItem>
