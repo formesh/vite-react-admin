@@ -40,7 +40,7 @@ export const routes: AppRouteObject[] = [
                         lazy: async () => ({
                             Component: (await import('@/pages/about/detail')).default
                         }),
-                        meta: { title: "关于详情", requiresAuth: true },
+                        meta: { title: "关于详情", requiresAuth: true, hideInMenu: true },
                     }
                 ]
             },
@@ -73,6 +73,7 @@ export const routes: AppRouteObject[] = [
         lazy: async () => ({
             Component: (await import('@/pages/404')).default
         }),
+        meta: { title: "404" },
     }
 ]
 

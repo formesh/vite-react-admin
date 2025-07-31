@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button"
+import { useDocumentTitle } from "@/hooks/useDocumentTitle"
 import { Home, ArrowLeft, RefreshCw } from "lucide-react"
 import { useNavigate } from "react-router"
 
 export default function NotFoundPage() {
   const navigate = useNavigate()
-
+  useDocumentTitle(`${import.meta.env.VITE_SYSTEM_NAME}`)
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 flex items-center justify-center p-4">
       <div className="text-center space-y-8 max-w-lg mx-auto">

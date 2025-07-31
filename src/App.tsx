@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { RouterProvider } from 'react-router';
 import router from './router';
+
 // 加载中的组件
 const LoadingFallback = () => (
   <div className="min-h-screen flex items-center justify-center bg-gray-50">

@@ -3,10 +3,11 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Eye, EyeOff, Mail, Lock } from "lucide-react"
 import { useState } from "react"
+import { useDocumentTitle } from "@/hooks/useDocumentTitle"
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false)
-
+  useDocumentTitle(`${import.meta.env.VITE_SYSTEM_NAME}`)
   return (
     <div className="min-h-screen flex items-center justify-center bg-background p-4">
       <div className="w-full max-w-sm space-y-6">
